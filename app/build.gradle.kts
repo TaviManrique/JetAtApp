@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.jetbrains.kotlin.compose)
+    kotlin("plugin.serialization") version "1.9.23"
+
 }
 
 android {
@@ -56,6 +58,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.text.google.fonts)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -65,6 +68,9 @@ dependencies {
 
     // Compose Navigation
     implementation(libs.androidx.navigation.compose)
+
+    // Kotlin serialization
+    implementation(libs.jetbrains.kotlin.serialization)
 
     // Room components
     implementation(libs.androidx.room.runtime)
@@ -80,4 +86,10 @@ dependencies {
 
     // Desugar JDK
     coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+    // Icon extended
+    implementation(libs.androidx.material.icons.extended)
+
+    // Gson
+    implementation(libs.gson)
 }

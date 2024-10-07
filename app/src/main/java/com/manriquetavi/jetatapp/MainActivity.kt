@@ -3,13 +3,16 @@ package com.manriquetavi.jetatapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
+import androidx.navigation.compose.rememberNavController
+import com.manriquetavi.jetatapp.navigation.Graph
+import com.manriquetavi.jetatapp.navigation.SetUpNavGraph
 import com.manriquetavi.jetatapp.ui.theme.JetAtAppTheme
 import com.manriquetavi.jetatapp.util.delayShortTime
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +27,7 @@ class MainActivity : ComponentActivity() {
         splashScreen.setKeepOnScreenCondition {
             isSplashScreenVisible
         }
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             JetAtAppTheme {
                 MyApp(
@@ -49,11 +53,10 @@ fun MyApp(isSplashScreenVisible: Boolean, onSplashFinished: () -> Unit) {
     if (isSplashScreenVisible) {
         SimulateDataLoading(onSplashFinished = onSplashFinished)
     } else {
-        HomeScreen()
+        val navController = rememberNavController()
+        SetUpNavGraph(
+            startDestination = Graph.DRAWER,
+            rootNavController = navController,
+        )
     }
-}
-
-@Composable
-fun HomeScreen() {
-    Text(text = "Bienvenido a la app!")
 }
