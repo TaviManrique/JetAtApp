@@ -1,7 +1,6 @@
 package com.manriquetavi.jetatapp.features.detail
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,7 +16,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.ArrowDropUp
 import androidx.compose.material3.Card
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -34,15 +32,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.max
 import com.manriquetavi.jetatapp.common.component.progress.AtProgressIndicator
 import com.manriquetavi.jetatapp.common.component.screen.EmptyContent
 import com.manriquetavi.jetatapp.common.model.BetDetail
-import com.manriquetavi.jetatapp.common.model.BetState
 import com.manriquetavi.jetatapp.ui.theme.loseStatus
 import com.manriquetavi.jetatapp.ui.theme.neutralStatus
 import com.manriquetavi.jetatapp.ui.theme.wonStatus
-import com.manriquetavi.jetatapp.util.formatDate
 import com.manriquetavi.jetatapp.util.toTypeName
 
 @Composable
@@ -247,7 +242,7 @@ fun EventDetailRow(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            modifier = Modifier.weight(7f),
+            modifier = Modifier.weight(0.65f),
             text = label,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             overflow = TextOverflow.Ellipsis,
@@ -255,11 +250,13 @@ fun EventDetailRow(
         )
         Text(
             modifier = Modifier
-                .weight(3f)
+                .weight(0.35f)
                 .padding(start = 4.dp),
             text = value,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface
+            color = MaterialTheme.colorScheme.onSurface,
+            overflow = TextOverflow.Ellipsis,
+            maxLines = 1
         )
     }
 }
