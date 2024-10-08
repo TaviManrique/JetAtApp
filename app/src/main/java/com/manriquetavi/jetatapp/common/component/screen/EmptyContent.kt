@@ -5,7 +5,9 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -34,7 +36,8 @@ import com.manriquetavi.jetatapp.R
 
 @Composable
 fun EmptyContent(
-    modifier: Modifier
+    modifier: Modifier,
+    title: String
 ) {
     var startAnimation by remember { mutableStateOf(false) }
     val alphaAnim by animateFloatAsState(
@@ -57,8 +60,9 @@ fun EmptyContent(
             painter = painterResource(id = R.drawable.ic_search_document),
             contentDescription = "Icon to Empty Content",
         )
+        Spacer(Modifier.height(8.dp))
         Text(
-            text = "No se encontro datos",
+            text = title,
             style = TextStyle(
                 fontSize = MaterialTheme.typography.titleMedium.fontSize,
                 fontWeight = FontWeight.Medium

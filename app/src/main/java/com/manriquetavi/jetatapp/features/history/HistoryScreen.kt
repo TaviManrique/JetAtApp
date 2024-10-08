@@ -42,7 +42,9 @@ fun HistoryScreen(
     when (uiState) {
         HistoryUiState.Loading -> {
             Box(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
                 contentAlignment = Alignment.Center
             ) {
                 AtProgressIndicator()
@@ -53,7 +55,12 @@ fun HistoryScreen(
         }
 
         HistoryUiState.EmptyData -> {
-            EmptyContent(modifier = Modifier.fillMaxSize())
+            EmptyContent(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                title = "No se encontraron datos"
+            )
         }
 
         is HistoryUiState.Success -> {

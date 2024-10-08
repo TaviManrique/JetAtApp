@@ -14,7 +14,7 @@ data class BetDetail(
     @SerializedName("BgSrc")
     val bgSrc: String,
     @SerializedName("CashoutOdds")
-    val cashoutOdds: String,
+    val cashOutOdds: String,
     @SerializedName("TotalOdds")
     val totalOdds: String,
     @SerializedName("TotalStake")
@@ -22,7 +22,7 @@ data class BetDetail(
     @SerializedName("TotalWin")
     val totalWin: String,
     @SerializedName("CashoutValue")
-    val cashoutValue: String,
+    val cashOutValue: String,
     @SerializedName("CreatedDate")
     val createdDate: String,
     @SerializedName("BetSelections")

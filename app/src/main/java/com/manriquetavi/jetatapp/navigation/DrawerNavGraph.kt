@@ -1,6 +1,5 @@
 package com.manriquetavi.jetatapp.navigation
 
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.manriquetavi.jetatapp.common.model.ChipFilter
 import com.manriquetavi.jetatapp.features.detail.DetailScreen
+import com.manriquetavi.jetatapp.features.detail.DetailViewModel
 import com.manriquetavi.jetatapp.features.history.HistoryScreen
 import com.manriquetavi.jetatapp.features.history.HistoryViewModel
 import com.manriquetavi.jetatapp.features.home.HomeScreen
@@ -56,7 +56,12 @@ fun DrawerNavGraph(
             )
         }
         composable(route = Screen.Detail.route) {
-            DetailScreen()
+            val viewModel: DetailViewModel = hiltViewModel()
+            val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+            DetailScreen(
+                paddingValues = paddingValues,
+                uiState = uiState
+            )
         }
     }
 }

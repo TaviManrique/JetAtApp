@@ -30,6 +30,14 @@ suspend fun delayLongTime() {
     delay(time)
 }
 
+fun String.toTypeName() =
+    when (this) {
+        "System" -> "Multiple"
+        "Simple" -> "Simple"
+        else -> ""
+
+}
+
 fun formatDate(input: String): String {
     val originalFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
     val targetFormat = SimpleDateFormat("yyyy-MM-dd h:mma", Locale.getDefault())

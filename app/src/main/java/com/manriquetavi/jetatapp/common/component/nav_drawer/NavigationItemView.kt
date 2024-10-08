@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.manriquetavi.jetatapp.common.model.NavigationItem
+import com.manriquetavi.jetatapp.ui.theme.primaryColor
 
 @Composable
 fun NavigationItemView(
@@ -34,7 +35,7 @@ fun NavigationItemView(
             .clip(RoundedCornerShape(size = 8.dp))
             .clickable { onClick() }
             .background(
-                color = if (selected) MaterialTheme.colorScheme.surfaceColorAtElevation(4.dp)
+                color = if (selected) primaryColor.copy(0.05f)
                 else Color.Unspecified,
                 shape = RoundedCornerShape(8.dp)
             )
@@ -44,13 +45,13 @@ fun NavigationItemView(
         Icon(
             imageVector = navigationItem.icon,
             contentDescription = "Navigation Item Icon",
-            tint = if (selected) MaterialTheme.colorScheme.primary
+            tint = if (selected) primaryColor
             else MaterialTheme.colorScheme.onSurface
         )
         Spacer(modifier = Modifier.width(12.dp))
         Text(
             text = navigationItem.title,
-            color = if (selected) MaterialTheme.colorScheme.primary
+            color = if (selected) primaryColor
             else MaterialTheme.colorScheme.onSurface,
             fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal,
             lineHeight = 18.sp
