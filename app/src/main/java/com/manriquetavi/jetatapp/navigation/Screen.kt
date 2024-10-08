@@ -29,6 +29,10 @@ sealed class Screen(val route: String) {
     data object Register: Screen("register_screen")
     data object History: Screen("history_screen")
     data object Profile: Screen("profile_screen")
-    data object Detail: Screen("detail_screen")
+    data object Detail: Screen("detail_screen/game={game}") {
+        fun createRoute(game: String): String {
+            return "detail_screen/game=$game"
+        }
+    }
     data object Setting: Screen("setting_screen")
 }

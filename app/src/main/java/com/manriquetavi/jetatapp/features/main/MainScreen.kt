@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -118,11 +119,20 @@ fun MainScreen(
                         )
                     },
                     navigationIcon = {
-                        IconButton(onClick = { drawerState = drawerState.opposite() }) {
-                            Icon(
-                                imageVector = Icons.Default.Menu,
-                                contentDescription = "Menu Icon"
-                            )
+                        if (shouldShowAtDrawer) {
+                            IconButton(onClick = { drawerState = drawerState.opposite() }) {
+                                Icon(
+                                    imageVector = Icons.Default.Menu,
+                                    contentDescription = "Menu Icon"
+                                )
+                            }
+                        } else {
+                            IconButton(onClick = { drawerNavController.popBackStack() }) {
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                    contentDescription = "Menu Icon"
+                                )
+                            }
                         }
                     }
                 )

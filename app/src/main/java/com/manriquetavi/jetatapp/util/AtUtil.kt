@@ -12,6 +12,8 @@ import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 suspend fun delayShortTime() {
     val time = Random.nextInt(1500, 2500).toLong()
@@ -26,6 +28,13 @@ suspend fun delayMediumTime() {
 suspend fun delayLongTime() {
     val time = Random.nextInt(6500, 8500).toLong()
     delay(time)
+}
+
+fun formatDate(input: String): String {
+    val originalFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+    val targetFormat = SimpleDateFormat("yyyy-MM-dd h:mma", Locale.getDefault())
+    val date = originalFormat.parse(input)
+    return targetFormat.format(date!!)
 }
 
 @SuppressLint("UnnecessaryComposedModifier")

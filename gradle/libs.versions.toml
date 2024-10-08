@@ -29,6 +29,8 @@ googleGms = "4.4.2"
 ksp = "2.0.0-1.0.21"
 uiTextGoogleFonts = "1.7.3"
 gson = "2.10.1"
+composeMaterial = "1.4.0"
+lottieVersion = "6.0.0"
 
 
 [libraries]
@@ -68,6 +70,8 @@ messagebarcompose = { module = "com.github.stevdza-san:MessageBarCompose", versi
 onetapcompose = { module = "com.github.stevdza-san:OneTapCompose", version.ref = "onetapcompose" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+androidx-compose-material = { group = "androidx.wear.compose", name = "compose-material", version.ref = "composeMaterial" }
+lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp"}

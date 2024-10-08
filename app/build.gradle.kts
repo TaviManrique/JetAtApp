@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.text.google.fonts)
+    implementation(libs.androidx.compose.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -83,6 +84,8 @@ dependencies {
     // Dagger Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    // Navigation Hilt Compose
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Desugar JDK
     coreLibraryDesugaring(libs.desugar.jdk.libs)
@@ -92,4 +95,8 @@ dependencies {
 
     // Gson
     implementation(libs.gson)
+
+    // Lottie
+    implementation(libs.lottie)
+
 }

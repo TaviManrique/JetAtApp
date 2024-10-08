@@ -2,22 +2,35 @@ package com.manriquetavi.jetatapp.common.model
 
 import com.google.gson.annotations.SerializedName
 
-
 data class BetDetail(
     @SerializedName("BetNivel")
     val betLevel: String,
-    val BetStarts: Int,
-    val BetStatusName: String,
-    val BetTypeName: String,
-    val BgSrc: String,
-    val CashoutOdds: String,
-    val TotalOdds: String,
-    val TotalStake: String,
-    val TotalWin: String,
-    val CashoutValue: String,
-    val CreatedDate: String,
-    val BetSelections: List<BetSelection>,
-    val BetStatus: Int,
-    val BetType: Int,
-    val BetId: Long
+    @SerializedName("BetStarts")
+    val betStarts: Int,
+    @SerializedName("BetStatusName")
+    val betStatusName: String,
+    @SerializedName("BetTypeName")
+    val betTypeName: String,
+    @SerializedName("BgSrc")
+    val bgSrc: String,
+    @SerializedName("CashoutOdds")
+    val cashoutOdds: String,
+    @SerializedName("TotalOdds")
+    val totalOdds: String,
+    @SerializedName("TotalStake")
+    val totalStake: String,
+    @SerializedName("TotalWin")
+    val totalWin: String,
+    @SerializedName("CashoutValue")
+    val cashoutValue: String,
+    @SerializedName("CreatedDate")
+    val createdDate: String,
+    @SerializedName("BetSelections")
+    val betSelections: List<BetSelection>,
+    @SerializedName("BetStatus")
+    val betStatus: Int,
+    @SerializedName("BetType")
+    val betType: Int,
+    @SerializedName("BetId")
+    val betId: Long
 )

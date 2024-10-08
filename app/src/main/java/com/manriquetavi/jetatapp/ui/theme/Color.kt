@@ -4,6 +4,10 @@ import androidx.compose.ui.graphics.Color
 
 val primaryColor = Color(0xFFFE010A)
 
+val wonStatus = Color(0xFF1CDB2F)
+val loseStatus = Color(0xFFEB3333)
+val neutralStatus = Color(0xFFF5CB3E)
+
 val primaryLight = Color(0xFFA50003)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFEA0008)
