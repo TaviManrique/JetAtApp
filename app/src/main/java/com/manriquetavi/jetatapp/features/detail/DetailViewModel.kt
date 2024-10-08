@@ -1,13 +1,11 @@
 package com.manriquetavi.jetatapp.features.detail
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.manriquetavi.jetatapp.common.model.Bet
 import com.manriquetavi.jetatapp.common.model.BetDetail
 import com.manriquetavi.jetatapp.util.delayMediumTime
 import dagger.hilt.android.lifecycle.HiltViewModel
