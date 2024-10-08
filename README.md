@@ -1,9 +1,7 @@
-<br />
-<div align="center">
-  <a href="https://youtu.be/D8unjPg_tlQ">
-    <img src=app/src/main/res/drawable/imangen.jpeg" alt="Thumbnail Image">
-  </a>
-
-<h1 align = "center">
-<b><i>At app</i></b>
-</h1>
+<img src="/app/src/main/res/drawable/screenshot_1.png" width="270" height="570">
+## Tools and Techs
+* Language Kotlin
+* Presentation pattern design MVVM
+* Jetpack Compose to declarative UI
+* Dagger Hilt to Dependency Injection
+* Splash Screen API
